@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+
 @Service
 public class ProductService {
     private Logger logger = Logger.getLogger(ProductService.class.getName());
@@ -27,6 +29,7 @@ public class ProductService {
 
         for (int i = 0; i < products.size(); i++) {
             ProductDTO dto = new ProductDTO(products.get(i));
+            dto.add(linkTo(ProductDTO.class).slash(dto.getId()).withSelfRel());
             listDTO.add(dto);
         }
 
@@ -37,6 +40,7 @@ public class ProductService {
         Product entity = repository.findById(id).get();
         ProductDTO dto = new ProductDTO(entity);
         logger.info("Buscando o produto = " + entity);
+        dto.add(linkTo(ProductDTO.class).slash(dto.getId()).withSelfRel());
         return dto;
     }
 
@@ -44,6 +48,7 @@ public class ProductService {
         logger.info("Criando um produto = " + product);
         repository.save(product);
         ProductDTO dto = new ProductDTO(product);
+        dto.add(linkTo(ProductDTO.class).slash(dto.getId()).withSelfRel());
         return dto;
     }
 
@@ -54,6 +59,7 @@ public class ProductService {
             updateProduct(entity, product);
             repository.save(entity);
             ProductDTO dto = new ProductDTO(entity);
+            dto.add(linkTo(ProductDTO.class).slash(dto.getId()).withSelfRel());
             return dto;
         } catch (EntityNotFoundException e) {
             logger.info("Produto não encontrado, id = " + id);

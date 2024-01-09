@@ -2,6 +2,7 @@ package com.kevinraupp.nunessports.DesafioEveryMind.controllers;
 
 import com.kevinraupp.nunessports.DesafioEveryMind.dto.ProductDTO;
 import com.kevinraupp.nunessports.DesafioEveryMind.entities.Product;
+import com.kevinraupp.nunessports.DesafioEveryMind.exceptions.ListNotFoundException;
 import com.kevinraupp.nunessports.DesafioEveryMind.services.ProductService;
 import com.kevinraupp.nunessports.DesafioEveryMind.util.MediaType;
 import io.swagger.v3.oas.annotations.Operation;
@@ -32,6 +33,7 @@ public class ProductController {
                     @ApiResponse(description = "Internal Error", responseCode = "500", content = @Content)})
     public ResponseEntity<List<ProductDTO>> findAll() {
         List<ProductDTO> list = service.findAll();
+        if (list.isEmpty()) throw new ListNotFoundException();
         return ResponseEntity.ok(list);
     }
 

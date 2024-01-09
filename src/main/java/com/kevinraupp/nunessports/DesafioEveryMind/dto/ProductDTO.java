@@ -1,10 +1,12 @@
 package com.kevinraupp.nunessports.DesafioEveryMind.dto;
 
 import com.kevinraupp.nunessports.DesafioEveryMind.entities.Product;
+import org.springframework.hateoas.RepresentationModel;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class ProductDTO {
+public class ProductDTO extends RepresentationModel<ProductDTO> implements Serializable {
 
     private Long id;
     private String name;
