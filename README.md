@@ -10,4 +10,4 @@ Projeto de testes para vaga de desenvolvedor trainee na empresa EveryMind.
 - API com paginação;
 - Content negotiation, produzindo em JSON, XML e YML;
 - Todos endpoints tem um LOG do que esta sendo feito;
-- Projeto disponível no docker
+- Projeto disponível no docker;
