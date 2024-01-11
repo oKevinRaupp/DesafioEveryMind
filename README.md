@@ -1,6 +1,6 @@
 # Projeto Desafio EveryMind
 
-Projeto de testes para va de desenvolvedor trainee na empresa EveryMind.
+Projeto de testes para vaga de desenvolvedor trainee na empresa EveryMind.
 
 - Utilizado o Swagger para documentação da API;
 - Banco de dados MySQL populado com migration;
