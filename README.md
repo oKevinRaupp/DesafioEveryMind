@@ -2,6 +2,8 @@
 
 [![Docker Hub Repo](https://img.shields.io/docker/pulls/okevinraupp/desafio-everymind.svg)](https://hub.docker.com/repository/docker/okevinraupp/desafio-everymind)
 
+[![Docker Hub Repo](https://img.shields.io/docker/pulls/okevinraupp/mysql-desafio-everymind.svg)](https://hub.docker.com/repository/docker/okevinraupp/mysql-desafio-everymind)
+
 Projeto de testes para vaga de desenvolvedor trainee na empresa EveryMind.
 
 - Utilizado o Swagger para documentação da API;
